@@ -1,0 +1,1 @@
+export const FETCH_FILMS = 'fetch_films';
