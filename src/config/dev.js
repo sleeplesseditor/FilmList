@@ -1,4 +1,4 @@
-//Prod.js - do not commit
+//Dev.js - do not commit
 
 export const FirebaseConfig = {
     apiKey: "AIzaSyAWdtOXxCLQn4W54on1c2OZ5pbrd1Rfpbc",

@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import '../style/App.css';
 import firebase from 'firebase';
+import { FirebaseConfig } from '../config/keys';
 
 import Header from './Header';
-import { FirebaseConfig } from '../config/keys';
+import FilmForm from './FilmForm';
 
 class App extends Component {
   componentWillMount() {
@@ -14,6 +15,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
+        <FilmForm />
       </div>
     );
   }
