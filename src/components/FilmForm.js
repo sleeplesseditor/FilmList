@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import * as actions from '../actions';
 
 class FilmForm extends Component {
+    
+    componentWillMount() {
+
+    }
+
     render() {
         return (
             <div>
@@ -27,4 +34,4 @@ class FilmForm extends Component {
     }
 }
 
-export default FilmForm;
+export default connect(null, actions)(FilmForm);

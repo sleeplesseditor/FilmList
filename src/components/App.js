@@ -13,10 +13,10 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <Header />
-        <FilmForm />
-      </div>
+        <div>
+          <Header />
+          <FilmForm />
+        </div>
     );
   }
 }
