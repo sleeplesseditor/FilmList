@@ -4,7 +4,7 @@ import firebase from 'firebase';
 import { FirebaseConfig } from '../config/keys';
 
 import Header from './Header';
-import FilmForm from './FilmForm';
+import FilmList from './FilmList';
 
 class App extends Component {
   componentWillMount() {
@@ -15,7 +15,7 @@ class App extends Component {
     return (
         <div>
           <Header />
-          <FilmForm />
+          <FilmList />
         </div>
     );
   }

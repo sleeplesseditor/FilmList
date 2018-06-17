@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 
-class FilmForm extends Component {
+class FilmList extends Component {
     
     componentWillMount() {
+        this.props.fetchFilm();
 
     }
 
@@ -18,7 +19,7 @@ class FilmForm extends Component {
                         <option value="2">1974</option>
                         <option value="3">1975</option>
                     </select>
-                    <label>Select a Year</label>
+                    <label className="selector-title">Select a Year</label>
                 </div>
                 <div className="input-field col s12 m6">
                     <select className="browser-default genre-selector">
@@ -27,11 +28,11 @@ class FilmForm extends Component {
                         <option value="2">Western</option>
                         <option value="3">Science Fiction</option>
                     </select>
-                    <label>Select a Genre</label>
+                    <label className="selector-title">Select a Genre</label>
                 </div>
             </div>
         );
     }
 }
 
-export default connect(null, actions)(FilmForm);
+export default connect(null, actions)(FilmList);
