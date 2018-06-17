@@ -6,7 +6,6 @@ class FilmList extends Component {
     
     componentWillMount() {
         this.props.fetchFilm();
-
     }
 
     render() {
@@ -15,9 +14,7 @@ class FilmList extends Component {
                 <div className="input-field col s12 m6">
                     <select className="browser-default year-selector">
                         <option value="" disabled selected></option>
-                        <option value="1">1973</option>
-                        <option value="2">1974</option>
-                        <option value="3">1975</option>
+                        <option value="">{this.props.year}</option>
                     </select>
                     <label className="selector-title">Select a Year</label>
                 </div>
@@ -30,9 +27,31 @@ class FilmList extends Component {
                     </select>
                     <label className="selector-title">Select a Genre</label>
                 </div>
+                <br />
+                <div>
+                    <table className="table table-hover film-table">
+                        <thead>
+                            <tr>
+                                <th>Year</th>
+                                <th>Genre</th>
+                                <th>Title</th>
+                                <th>Director</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+        
+                        </tbody>
+                    </table>
+                </div>
             </div>
+
+            
         );
     }
 }
 
-export default connect(null, actions)(FilmList);
+const mapStateToProps = (state) => {
+    const { year, genre, title, director } = state.FilmList
+}
+
+export default connect(mapStateToProps, actions)(FilmList);
