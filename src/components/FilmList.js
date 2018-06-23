@@ -50,8 +50,10 @@ class FilmList extends Component {
     }
 }
 
-const mapStateToProps = (state) => {
-    const { year, genre, title, director } = state.FilmList
-}
+// const mapStateToProps = (state) => {
+//     const { year, genre, title, director } = state.FilmList;
 
-export default connect(mapStateToProps, actions)(FilmList);
+//     return { year, genre, title, director };
+// }
+
+export default connect(null, actions)(FilmList);

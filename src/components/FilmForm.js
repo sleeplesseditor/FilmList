@@ -26,20 +26,25 @@ class FilmForm extends Component {
                     </div>
                 </form>
                 <br />
-                <button>
-                    <Link to="/">
-                        Back
-                    </Link>
-                </button>
+                <div>
+                    <button className="back-button btn red darken-2">
+                        <Link to="/" style={{ textDecoration: 'none', color: 'white' }}>
+                            Back
+                        </Link>
+                    </button>
+                    <button className="form-button btn waves-effect waves-light" type="submit" name="action">
+                        Submit
+                    </button>
+                </div>
             </div>
         );
     }
 }
 
-const mapStateToProps = (state) => {
-    const { year, genre, title, director } = state.FilmForm;
+// const mapStateToProps = (state) => {
+//     const { year, genre, title, director } = state.FilmForm;
 
-    return { year, genre, title, director };
-}
+//     return { year, genre, title, director };
+// }
 
-export default connect(mapStateToProps, actions)(FilmForm);
+export default connect(null, actions)(FilmForm);
