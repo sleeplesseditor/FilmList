@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import _ from 'lodash';
 import { connect } from 'react-redux';
-import * as actions from '../actions';
+import { fetchFilm } from '../actions';
 
 class FilmList extends Component {
     
@@ -50,10 +51,12 @@ class FilmList extends Component {
     }
 }
 
-// const mapStateToProps = (state) => {
-//     const { year, genre, title, director } = state.FilmList;
+const mapStateToProps = (state) => {
+    const films = _.map(state.films, (val) => {
+        return { ...val };
+    });
 
-//     return { year, genre, title, director };
-// }
+    return { films };
+};
 
-export default connect(null, actions)(FilmList);
+export default connect(mapStateToProps, { fetchFilm })(FilmList);

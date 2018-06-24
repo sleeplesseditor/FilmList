@@ -11,7 +11,7 @@ export const filmUpdate = ({ prop, value }) => {
 export const fetchFilm = () => {
 
     return (dispatch) => {
-        firebase.database().ref()
+        firebase.database().ref(`/films`)
             .on('value', snapshot => {
                 dispatch({ type: FETCH_FILMS, payload: snapshot.val() });
             });

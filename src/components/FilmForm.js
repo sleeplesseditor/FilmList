@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import * as actions from '../actions';
+import { filmUpdate } from '../actions';
 import { Link } from 'react-router-dom';
 
 class FilmForm extends Component {
@@ -41,10 +41,10 @@ class FilmForm extends Component {
     }
 }
 
-// const mapStateToProps = (state) => {
-//     const { year, genre, title, director } = state.FilmForm;
+const mapStateToProps = (state) => {
+    const { year, genre, title, director } = state.FilmForm;
 
-//     return { year, genre, title, director };
-// }
+    return { year, genre, title, director };
+}
 
-export default connect(null, actions)(FilmForm);
+export default connect(mapStateToProps, { filmUpdate })(FilmForm);
